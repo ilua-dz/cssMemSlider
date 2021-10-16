@@ -1,0 +1,91 @@
+body {
+	margin: 0;
+	padding-top: 1vh;
+}
+
+.slider-container {
+	width: 100vw;
+	height: 97vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+}
+
+.slider-image {
+	width: 97vw;
+	height: 76vh;
+	background-color: bisque;
+	border-radius: 1vw;
+}
+
+.slider-description {
+	width: 95%;
+	height: 17vh;
+	padding: 1%;
+	background-color: brown;
+	border-radius: 1vw;
+	display: flex;
+}
+
+.slider-text-container {
+	width: 70%;
+}
+
+.slider-text {
+	height: 10%;
+}
+
+.slider-pagination-container {
+	width: 30%;
+	display: flex;
+	justify-content: end;
+}
+
+.slider-pagination-wrapper {
+	position: relative;
+	height: 10%;
+	display: flex;
+	justify-content: space-between;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+.label-container {
+	width: 2em;
+	height: 2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.label-inner {
+	box-sizing: border-box;
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: rgb(116, 109, 202);
+}
+
+.label-inner:hover {
+	background-color: white;
+}
+
+.label-container:hover .label-inner {
+	background-color: white;
+}
+
+input[type="radio"]:checked + .label-container * {
+	background-color: black;
+	border: solid rgb(116, 109, 202);
+}
+
+input[type="radio"]:checked + .label-container:hover * {
+	background-color: black;
+	border: solid white;
+}
