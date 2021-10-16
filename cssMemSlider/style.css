@@ -1,52 +1,62 @@
-body {
-	margin: 0;
-	padding-top: 1vh;
+body * {
+	transition: transform 0.3s;
 }
 
-.slider-container {
+body {
+	margin: 0;
+	height: 100vh;
 	width: 100vw;
-	height: 97vh;
+	background-color: rgb(180, 207, 196);
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 }
 
+h1 {
+	font-family: "IBM Plex Sans Thai", sans-serif;
+	text-align: center;
+	width: 60vw;
+	font-size: 2vw;
+}
+
+.slider-container {
+	width: 50vw;
+	height: 30vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap-reverse;
+	flex-direction: row-reverse;
+}
+
 .slider-image {
-	width: 97vw;
-	height: 76vh;
-	background-color: bisque;
+	height: 90%;
+	width: inherit;
+	overflow: hidden;
 	border-radius: 1vw;
 }
 
-.slider-description {
-	width: 95%;
-	height: 17vh;
-	padding: 1%;
-	background-color: brown;
-	border-radius: 1vw;
-	display: flex;
+.slide {
+	display: block;
+	width: 100%;
+	height: 100%;
 }
 
 .slider-text-container {
-	width: 70%;
+	overflow: hidden;
+	margin-right: auto;
+	width: 50%;
+	height: 1.5vw;
 }
 
 .slider-text {
-	height: 10%;
-}
-
-.slider-pagination-container {
-	width: 30%;
-	display: flex;
-	justify-content: end;
-}
-
-.slider-pagination-wrapper {
-	position: relative;
-	height: 10%;
-	display: flex;
-	justify-content: space-between;
+	margin: 0;
+	display: block;
+	font-family: "IBM Plex Sans Thai", sans-serif;
+	font-size: 1.2vw;
+	line-height: 1.5vw;
+	height: inherit;
 }
 
 input[type="radio"] {
@@ -80,6 +90,10 @@ input[type="radio"] {
 	background-color: white;
 }
 
+.label-container:active .label-inner {
+	background-color: rgb(105, 105, 105);
+}
+
 input[type="radio"]:checked + .label-container * {
 	background-color: black;
 	border: solid rgb(116, 109, 202);
@@ -88,4 +102,49 @@ input[type="radio"]:checked + .label-container * {
 input[type="radio"]:checked + .label-container:hover * {
 	background-color: black;
 	border: solid white;
+}
+
+#radio5:checked ~ .slider-image * {
+	transform: translate(0, -400%);
+	opacity: 1;
+}
+
+#radio5:checked ~ .slider-text-container * {
+	transform: translate(0, -6vw);
+}
+
+#radio4:checked ~ .slider-image * {
+	transform: translate(0, -300%);
+	opacity: 1;
+}
+
+#radio4:checked ~ .slider-text-container * {
+	transform: translate(0, -4.5vw);
+}
+
+#radio3:checked ~ .slider-image * {
+	transform: translate(0, -200%);
+	opacity: 1;
+}
+
+#radio3:checked ~ .slider-text-container * {
+	transform: translate(0, -3vw);
+}
+
+#radio2:checked ~ .slider-image * {
+	transform: translate(0, -100%);
+	opacity: 1;
+}
+
+#radio2:checked ~ .slider-text-container * {
+	transform: translate(0, -1.5vw);
+}
+
+#radio1:checked ~ .slider-image * {
+	transform: translate(0, 0);
+	opacity: 1;
+}
+
+#radio1:checked ~ .slider-text-container * {
+	transform: translate(0, 0);
 }
