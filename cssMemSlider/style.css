@@ -6,7 +6,7 @@ body {
 	margin: 0;
 	height: 100vh;
 	width: 100vw;
-	background-color: rgb(180, 207, 196);
+	background-color: #dfd297;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -16,37 +16,45 @@ body {
 h1 {
 	font-family: "IBM Plex Sans Thai", sans-serif;
 	text-align: center;
-	width: 60vw;
+	width: 70vw;
 	font-size: 2vw;
 }
 
 .slider-container {
-	width: 50vw;
-	height: 30vw;
+	padding: 1vw;
+	width: 53vw;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	flex-wrap: wrap-reverse;
-	flex-direction: row-reverse;
+	flex-wrap: wrap;
+	background-color: rgb(180, 25, 25);
+	border: 0;
+	border-radius: 1vw;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+		rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .slider-image {
-	height: 90%;
-	width: inherit;
+	order: 1;
+	height: 34vw;
+	width: 100%;
 	overflow: hidden;
 	border-radius: 1vw;
+	margin-bottom: 1vw;
 }
 
 .slide {
 	display: block;
 	width: 100%;
 	height: 100%;
+	opacity: 0;
 }
 
 .slider-text-container {
+	order: 2;
 	overflow: hidden;
 	margin-right: auto;
-	width: 50%;
+	width: 60%;
 	height: 1.5vw;
 }
 
@@ -54,9 +62,10 @@ h1 {
 	margin: 0;
 	display: block;
 	font-family: "IBM Plex Sans Thai", sans-serif;
-	font-size: 1.2vw;
+	font-size: 1.4vw;
 	line-height: 1.5vw;
 	height: inherit;
+	opacity: 0;
 }
 
 input[type="radio"] {
@@ -64,8 +73,9 @@ input[type="radio"] {
 }
 
 .label-container {
-	width: 2em;
-	height: 2em;
+	order: 3;
+	width: 2vw;
+	height: 2vw;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -75,11 +85,12 @@ input[type="radio"] {
 .label-inner {
 	box-sizing: border-box;
 	display: inline-block;
-	width: 1em;
-	height: 1em;
+	width: 50%;
+	height: 50%;
 	border-radius: 50%;
 	cursor: pointer;
 	background-color: rgb(116, 109, 202);
+	transition: all 0.5s;
 }
 
 .label-inner:hover {
@@ -96,55 +107,77 @@ input[type="radio"] {
 
 input[type="radio"]:checked + .label-container * {
 	background-color: black;
-	border: solid rgb(116, 109, 202);
+	border: 0.3vw solid rgb(116, 109, 202);
 }
 
 input[type="radio"]:checked + .label-container:hover * {
 	background-color: black;
-	border: solid white;
+	border: 0.3vw solid white;
 }
 
-#radio5:checked ~ .slider-image * {
-	transform: translate(0, -400%);
+#radio1:checked ~ .slider-image *,
+#radio1:checked ~ .slider-text-container * {
+	transform: translate(0, 0);
 	opacity: 1;
 }
 
-#radio5:checked ~ .slider-text-container * {
-	transform: translate(0, -6vw);
-}
-
-#radio4:checked ~ .slider-image * {
-	transform: translate(0, -300%);
-	opacity: 1;
-}
-
-#radio4:checked ~ .slider-text-container * {
-	transform: translate(0, -4.5vw);
-}
-
-#radio3:checked ~ .slider-image * {
-	transform: translate(0, -200%);
-	opacity: 1;
-}
-
-#radio3:checked ~ .slider-text-container * {
-	transform: translate(0, -3vw);
-}
-
-#radio2:checked ~ .slider-image * {
+#radio2:checked ~ .slider-image *,
+#radio2:checked ~ .slider-text-container * {
 	transform: translate(0, -100%);
 	opacity: 1;
 }
 
-#radio2:checked ~ .slider-text-container * {
-	transform: translate(0, -1.5vw);
-}
-
-#radio1:checked ~ .slider-image * {
-	transform: translate(0, 0);
+#radio3:checked ~ .slider-image *,
+#radio3:checked ~ .slider-text-container * {
+	transform: translate(0, -200%);
 	opacity: 1;
 }
 
-#radio1:checked ~ .slider-text-container * {
-	transform: translate(0, 0);
+#radio4:checked ~ .slider-image *,
+#radio4:checked ~ .slider-text-container * {
+	transform: translate(0, -300%);
+	opacity: 1;
+}
+
+#radio5:checked ~ .slider-image *,
+#radio5:checked ~ .slider-text-container * {
+	transform: translate(0, -400%);
+	opacity: 1;
+}
+
+@media (max-width: 700px) {
+	.slider-container {
+		width: 93vw;
+	}
+	h1 {
+		font-size: 3vw;
+	}
+
+	.slider-text-container {
+		order: 3;
+		width: 100%;
+		margin: 1vw 0;
+		height: 2.1vw;
+	}
+
+	.slider-text {
+		font-size: 2vw;
+		line-height: 2.1vw;
+	}
+
+	.label-container {
+		width: 4vw;
+		height: 4vw;
+	}
+
+	.slider-image {
+		height: 60vw;
+	}
+
+	.first-bullet {
+		margin-left: auto;
+	}
+	.last-bullet {
+		margin-right: auto;
+	}
 }
