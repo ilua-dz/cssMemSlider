@@ -104,12 +104,12 @@ input[type="radio"] {
 	transition: all 0.5s;
 }
 
-.label-inner:hover {
+/* .label-inner:hover {
 	background-color: var(--text-color);
-}
+} */
 
 .label-container:hover .label-inner {
-	background-color: var(--text-color);
+	background-color: var(--color);
 }
 
 .label-container:active .label-inner {
@@ -123,7 +123,7 @@ input[type="radio"]:checked + .label-container * {
 
 input[type="radio"]:checked + .label-container:hover * {
 	background-color: var(--body-color);
-	border: 0.3vw solid var(--text-color);
+	border: 0.3vw solid var(--color);
 }
 
 #radio1:checked ~ .slider-image *,
